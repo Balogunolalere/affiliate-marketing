@@ -1,5 +1,5 @@
 "use client"
-
+import { Suspense } from "react"
 import { useRouter } from "next/navigation"
 import DashboardTabs from "@/components/admin/dashboard-tabs"
 import { Button } from "@/components/ui/button"
@@ -7,7 +7,7 @@ import { LogOut } from "lucide-react"
 
 export default function DashboardPage() {
   const router = useRouter()
-
+  
   const handleLogout = () => {
     router.push("/auth/login")
   }
@@ -31,7 +31,9 @@ export default function DashboardPage() {
           </Button>
         </div>
         <div className="soft-shadow">
-          <DashboardTabs />
+          <Suspense fallback={<div>Loading...</div>}>
+            <DashboardTabs />
+          </Suspense>
         </div>
       </div>
     </main>
