@@ -73,6 +73,16 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-foreground/90">Support Links</h3>
             <div className="space-y-4">
               <div className="flex flex-col gap-3">
+                <a 
+                  href="tel:+447592224233"
+                  className="flex items-center gap-2 text-sm text-foreground/70 group p-2 rounded-md hover:bg-secondary/50 transition-colors"
+                >
+                  <Phone className="h-4 w-4 text-primary group-hover:text-primary transition-colors" />
+                  <div>
+                    <p className="group-hover:text-primary transition-colors">+44 7592 224233</p>
+                    <p className="text-xs text-foreground/50">(Support Line)</p>
+                  </div>
+                </a>
                 <div className="flex items-center gap-2 text-sm text-foreground/70 group p-2 rounded-md hover:bg-secondary/50 transition-colors">
                   <Mail className="h-4 w-4 text-primary group-hover:text-primary transition-colors" />
                   <div>

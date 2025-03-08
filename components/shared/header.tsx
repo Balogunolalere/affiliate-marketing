@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import MagneticButton from "@/components/ui/magnetic-button"
 import Image from "next/image"
@@ -84,6 +84,12 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8" role="navigation">
+            <div className="flex items-center gap-4 text-sm text-foreground/70">
+              <a href="tel:+447592224233" className="flex items-center gap-1 hover:text-primary transition-colors">
+                <Phone className="h-4 w-4 text-primary" />
+                <span>+44 7592 224233</span>
+              </a>
+            </div>
             {navItems.map((item) => (
               <div key={item.name} className="relative">
                 <Link

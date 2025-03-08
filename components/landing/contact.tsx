@@ -265,7 +265,7 @@ export default function Contact() {
                   <p className="text-sm text-foreground/80 flex items-start gap-2">
                     <HelpCircle size={16} className="text-primary mt-0.5 flex-shrink-0" />
                     <span>
-                      <span className="font-semibold text-primary">Questions about Digital BOSS Academy?</span> Fill out this form and we'll help guide you through the enrollment process. We'll respond with details about the program's three volumes, bonuses, and how to get started.
+                      <span className="font-semibold text-primary">Questions about Digital BOSS Academy?</span> Fill out this form and we'll help guide you through the enrollment process. You can also call us directly at <a href="tel:+447592224233" className="text-primary hover:underline">+44 7592 224233</a>. We'll respond with details about the program's three volumes, bonuses, and how to get started.
                     </span>
                   </p>
                 </div>
