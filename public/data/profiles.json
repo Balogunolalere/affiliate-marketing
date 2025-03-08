@@ -2,10 +2,10 @@
   "profiles": [
     {
       "id": "1",
-      "username": "banana bread",
-      "title": "test",
-      "bio": "test bio",
-      "image": "/uploaded-images/1741371808249.png"
+      "username": "Samuel Sehinde",
+      "title": "Digital Marketer",
+      "bio": "Samuel Sehinde is a dynamic digital marketer known for his innovative approach to boosting brand visibility and engagement across digital platforms. Leveraging expertise in social media, SEO, and content strategy, he transforms data-driven insights into captivating campaigns that consistently drive measurable success.",
+      "image": "/logoimage-removebg-preview.png"
     }
   ]
 }

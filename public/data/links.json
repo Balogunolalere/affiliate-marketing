@@ -1,32 +1,20 @@
 {
   "links": [
     {
-      "id": "1",
-      "title": "Follow me on Twitter",
-      "url": "https://x.com/_doombuggy",
+      "id": "instagram",
+      "title": "Follow DBA Affiliates on Instagram",
+      "url": "https://www.instagram.com/dbaaffiliates/",
+      "icon": "instagram",
       "profileId": "1",
       "order": 0
     },
     {
-      "id": "2",
-      "title": "Check out my latest course",
-      "url": "https://course.com",
+      "id": "facebook",
+      "title": "Connect with us on Facebook",
+      "url": "https://web.facebook.com/profile.php?id=61573741000454",
+      "icon": "facebook",
       "profileId": "1",
       "order": 1
-    },
-    {
-      "id": "3",
-      "title": "Support my work",
-      "url": "https://buy.com",
-      "profileId": "1",
-      "order": 2
-    },
-    {
-      "id": "4",
-      "title": "instagram",
-      "url": "https://www.instagram.com/",
-      "profileId": "1",
-      "order": 3
     }
   ]
 }
