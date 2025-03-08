@@ -15,6 +15,7 @@ interface LinkCardProps {
     url: string
     icon: string
   }
+  children?: React.ReactNode
 }
 
 const iconMap = {
@@ -40,7 +41,7 @@ const iconMap = {
   external: ExternalLink
 }
 
-export function LinkCard({ link }: LinkCardProps) {
+export function LinkCard({ link, children }: LinkCardProps) {
   const {
     attributes,
     listeners,
@@ -54,7 +55,7 @@ export function LinkCard({ link }: LinkCardProps) {
     transition,
   }
 
-  const Icon = iconMap[link.icon as keyof typeof iconMap] || Link // Use Link as fallback
+  const Icon = children ? () => <>{children}</> : (iconMap[link.icon as keyof typeof iconMap] || Link)
 
   return (
     <motion.div

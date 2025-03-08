@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Award } from 'lucide-react'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { useEffect, useState } from 'react'
 import { getStoredData, StoredProfile } from '@/lib/local-storage'
 
@@ -24,10 +25,10 @@ const item = {
 }
 
 const defaultProfile: StoredProfile = {
-  username: '@username',
-  title: 'Digital Creator',
-  bio: 'Creating content and sharing knowledge',
-  image: '/placeholder-user.jpg'
+  username: 'Samuel Sehinde',
+  title: 'Digital Marketer',
+  bio: 'Samuel Sehinde is a dynamic digital marketer known for his innovative approach to boosting brand visibility and engagement across digital platforms. Leveraging expertise in social media, SEO, and content strategy, he transforms data-driven insights into captivating campaigns that consistently drive measurable success.',
+  image: '/logoimage-removebg-preview.png'
 }
 
 export function ProfileHeader() {
@@ -37,7 +38,10 @@ export function ProfileHeader() {
     const loadProfile = async () => {
       const data = await getStoredData()
       if (data?.profile) {
-        setProfile(data.profile)
+        setProfile({
+          ...defaultProfile,
+          ...data.profile
+        })
       }
     }
     loadProfile()
@@ -58,7 +62,7 @@ export function ProfileHeader() {
       <motion.div variants={item} className="text-center">
         <Avatar className="w-24 h-24 mx-auto border-4 border-primary/20">
           <AvatarImage src={profile.image} alt={profile.username} />
-          <AvatarFallback>UN</AvatarFallback>
+          <AvatarFallback>SS</AvatarFallback>
         </Avatar>
       </motion.div>
 
@@ -68,10 +72,12 @@ export function ProfileHeader() {
           <Award className="w-4 h-4" />
           <span>{profile.title}</span>
         </div>
-        <p className="text-muted-foreground h-6">
-          {text}
-          <Cursor cursorStyle="_" />
-        </p>
+        <ScrollArea className="h-24 w-full px-4">
+          <p className="text-muted-foreground">
+            {text}
+            <Cursor cursorStyle="_" />
+          </p>
+        </ScrollArea>
       </motion.div>
     </motion.div>
   )

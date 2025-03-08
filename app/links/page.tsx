@@ -3,8 +3,8 @@ import { ProfileHeader } from '@/components/links/profile-header'
 import { LinkGrid } from '@/components/links/link-grid'
 
 export const metadata: Metadata = {
-  title: 'Links | Your Brand',
-  description: 'All your important links in one place',
+  title: 'Links | Digital BOSS Academy',
+  description: 'Connect with Digital BOSS Academy across all platforms',
 }
 
 export default async function LinksPage() {

@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { LinkCard } from '@/components/links/link-card'
 import { motion } from 'framer-motion'
-import { getStoredData } from '@/lib/local-storage'
-import { LinkItem } from '../admin/links/types'
+import { defaultLinks } from '@/lib/default-data'
+import { Facebook, Instagram } from 'lucide-react'
 
 interface ProcessedLink {
   id: string
@@ -31,38 +31,18 @@ const item = {
 }
 
 export function LinkGrid() {
-  const [links, setLinks] = useState<ProcessedLink[]>([])
+  const [links] = useState<ProcessedLink[]>(defaultLinks)
 
-  useEffect(() => {
-    const loadLinks = async () => {
-      const data = await getStoredData()
-      if (data?.links) {
-        const processedLinks: ProcessedLink[] = data.links.map((link: any) => ({
-          ...link,
-          type: link.type || 'social',
-          icon: link.icon || 'link'
-        }))
-        setLinks(processedLinks)
-      }
+  const getSocialIcon = (icon: string) => {
+    switch (icon) {
+      case 'instagram':
+        return <Instagram className="w-5 h-5" />
+      case 'facebook':
+        return <Facebook className="w-5 h-5" />
+      default:
+        return null
     }
-    loadLinks()
-
-    const handleStorageChange = async (e: StorageEvent) => {
-      if (e.key === 'affiliate-marketing-data') {
-        const newData = e.newValue ? JSON.parse(e.newValue) : null
-        if (newData?.links) {
-          const processedLinks: ProcessedLink[] = newData.links.map((link: any) => ({
-            ...link,
-            type: link.type || 'social',
-            icon: link.icon || 'link'
-          }))
-          setLinks(processedLinks)
-        }
-      }
-    }
-    window.addEventListener('storage', handleStorageChange)
-    return () => window.removeEventListener('storage', handleStorageChange)
-  }, [])
+  }
 
   return (
     <motion.div
@@ -73,7 +53,9 @@ export function LinkGrid() {
     >
       {links.map((link) => (
         <motion.div key={link.id} variants={item}>
-          <LinkCard link={link} />
+          <LinkCard link={link}>
+            {getSocialIcon(link.icon)}
+          </LinkCard>
         </motion.div>
       ))}
     </motion.div>
