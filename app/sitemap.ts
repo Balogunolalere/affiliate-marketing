@@ -9,12 +9,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: 'https://dbaincomeboost.com/links',
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    {
       url: 'https://dbaincomeboost.com/me',
       lastModified: new Date(),
       changeFrequency: 'weekly',

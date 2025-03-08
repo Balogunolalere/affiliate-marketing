@@ -51,11 +51,6 @@ export default function Header() {
       name: "Contact", 
       path: "/#contact",
       isActive: pathname === "/#contact"
-    },
-    {
-      name: "Links",
-      path: "/links",
-      isActive: pathname === "/links"
     }
   ]
 

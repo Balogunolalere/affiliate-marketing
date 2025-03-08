@@ -66,21 +66,6 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-
-            <div className="pt-3 flex items-center gap-4">
-              <Link href="https://twitter.com" target="_blank" rel="noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
-                <Twitter className="h-4 w-4" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="https://facebook.com" target="_blank" rel="noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
-                <Facebook className="h-4 w-4" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="https://instagram.com" target="_blank" rel="noreferrer" className="text-foreground/60 hover:text-primary transition-colors">
-                <Instagram className="h-4 w-4" />
-                <span className="sr-only">Instagram</span>
-              </Link>
-            </div>
           </div>
 
           {/* Contact */}
