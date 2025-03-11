@@ -2,7 +2,7 @@
 import { useState, useRef } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { Send, Phone, CheckCircle, AlertCircle, ArrowRight, HelpCircle, ChevronRight } from "lucide-react"
+import { Send, Phone, CheckCircle, AlertCircle, ArrowRight, HelpCircle, ChevronRight, MessageSquare } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -262,12 +262,35 @@ export default function Contact() {
             <Card className="overflow-hidden bg-card/80 backdrop-blur-sm shadow-lg border border-primary/10 hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
                 <div className="mb-6 p-4 bg-secondary/60 dark:bg-secondary/40 rounded-lg border border-primary/10 shadow-inner">
-                  <p className="text-sm text-foreground/80 flex items-start gap-2">
+                  <div className="text-sm text-foreground/80 flex items-start gap-2">
                     <HelpCircle size={16} className="text-primary mt-0.5 flex-shrink-0" />
-                    <span>
-                      <span className="font-semibold text-primary">Questions about Digital BOSS Academy?</span> Fill out this form and we'll help guide you through the enrollment process. You can also call us directly at <a href="tel:+447592224233" className="text-primary hover:underline">+44 7592 224233</a>. We'll respond with details about the program's three volumes, bonuses, and how to get started.
-                    </span>
-                  </p>
+                    <div>
+                      <p className="mb-2">
+                        <span className="font-semibold text-primary">Questions about Digital BOSS Academy?</span> Fill out this form and we'll help guide you through the enrollment process.
+                      </p>
+                      <a
+                        href="https://wa.me/447592224233"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-lg hover:bg-[#128C7E] transition-all group"
+                      >
+                        <motion.div
+                          animate={{ 
+                            scale: [1, 1.2, 1],
+                            rotate: [0, -10, 10, 0]
+                          }}
+                          transition={{ 
+                            duration: 1.5,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        >
+                          <MessageSquare className="h-5 w-5" />
+                        </motion.div>
+                        <span className="font-medium group-hover:tracking-wide transition-all">Chat with us on WhatsApp</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
                 
                 <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">

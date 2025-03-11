@@ -2,8 +2,9 @@
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, Globe, ArrowUpRight } from "lucide-react"
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, MessageSquare, MapPin, Globe, ArrowUpRight } from "lucide-react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 export default function Footer() {
   const quickLinks = [
@@ -74,13 +75,29 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex flex-col gap-3">
                 <a 
-                  href="tel:+447592224233"
+                  href="https://wa.me/447592224233"
+                  target="_blank"
+                  rel="noopener noreferrer" 
                   className="flex items-center gap-2 text-sm text-foreground/70 group p-2 rounded-md hover:bg-secondary/50 transition-colors"
                 >
-                  <Phone className="h-4 w-4 text-primary group-hover:text-primary transition-colors" />
+                  <motion.div
+                    initial={{ scale: 1 }}
+                    animate={{ 
+                      scale: [1, 1.2, 1],
+                      backgroundColor: ["rgba(var(--primary), 0.1)", "rgba(var(--primary), 0.2)", "rgba(var(--primary), 0.1)"]
+                    }}
+                    transition={{ 
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="rounded-full p-1"
+                  >
+                    <MessageSquare className="h-4 w-4 text-primary group-hover:text-primary transition-colors" />
+                  </motion.div>
                   <div>
-                    <p className="group-hover:text-primary transition-colors">+44 7592 224233</p>
-                    <p className="text-xs text-foreground/50">(Support Line)</p>
+                    <p className="group-hover:text-primary transition-colors">Chat on WhatsApp</p>
+                    <p className="text-xs text-foreground/50">(Quick Response)</p>
                   </div>
                 </a>
                 <div className="flex items-center gap-2 text-sm text-foreground/70 group p-2 rounded-md hover:bg-secondary/50 transition-colors">

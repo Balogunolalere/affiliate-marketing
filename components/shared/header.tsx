@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, X, Phone, MessageSquare } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import MagneticButton from "@/components/ui/magnetic-button"
 import Image from "next/image"
@@ -84,12 +84,6 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8" role="navigation">
-            <div className="flex items-center gap-4 text-sm text-foreground/70">
-              <a href="tel:+447592224233" className="flex items-center gap-1 hover:text-primary transition-colors">
-                <Phone className="h-4 w-4 text-primary" />
-                <span>+44 7592 224233</span>
-              </a>
-            </div>
             {navItems.map((item) => (
               <div key={item.name} className="relative">
                 <Link
@@ -155,6 +149,28 @@ export default function Header() {
                 aria-label="Mobile menu"
               >
                 <div className="flex flex-col space-y-3">
+                  <a 
+                    href="https://wa.me/447592224233" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm font-medium py-2 px-3 rounded-lg transition-colors bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <motion.div
+                      animate={{ 
+                        scale: [1, 1.2, 1],
+                        rotate: [0, -5, 5, 0]
+                      }}
+                      transition={{ 
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      <MessageSquare className="h-5 w-5" />
+                    </motion.div>
+                    <span>Chat on WhatsApp</span>
+                  </a>
                   {navItems.map((item) => (
                     <Link
                       key={item.name}
